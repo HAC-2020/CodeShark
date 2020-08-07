@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Details{% endblock %}
+
+{% block content %}
+
+<table border="1">
+    {% for city in cities %}
+    <tr>
+        <td>{{ city[0] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+<p>not favourable result?</p>
+<a href="failed"><button>Click Me</button></a>
+
+{% endblock %}

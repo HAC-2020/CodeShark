@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Sorry{% endblock %}
+
+{% block content %}
+<form action="#" method="POST">
+      <label for="title">ENTER THE NAME OF YOUR CITY, again</label><br/>
+      <input type="text" name="city" placeholder="enter your city"><br/>
+      <input type="text" name="pm10" placeholder="enter pm 10 of your city"><br/>
+      <input type="text" name="pm25" placeholder="enter pm 2.5 of your city"><br/>
+      <input type="submit">
+</form>
+<p>
+    want to give us your data?
+</p>
+<a href="data"><button>click here</button></a>
+{% endblock %}
