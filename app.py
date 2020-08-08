@@ -31,6 +31,58 @@ def cache():
         flash(message='done')
     return render_template('app.html')
 
+@app.route('/ml', methods=["GET","POST"])
+def ml():
+    #Importing the required Modules and Libraries
+    import pandas as pd
+    import joblib
+    city = str()
+    Air_quality = float()
+    if request.method == 'POST':
+        details = request.form
+        city = details['city']
+        print (22)
+        if city == "Mumbai":
+            AQIVAR=joblib.load('MumbaiVAR.pkl')
+            prediction=AQIVAR.forecast(AQIVAR.y,steps=11)
+            # Loading the csv file to get the columns
+            df=pd.read_csv(r'Mumbai.csv')
+            df.drop(["Date","City", "Benzene", "Toluene", "Xylene", "NH3","NO", "NOx","AQI_Bucket"],axis=1,inplace=True)
+            #Converting our prediction array to Dataframe
+            Prediction=pd.DataFrame(index=range(0,len(prediction)),columns=df.columns)
+
+            for j in range(7):
+                for i in range(len(prediction)):
+                    Prediction.iloc[i][j]=prediction[i][j]
+            from datetime import datetime
+            datetime.today()
+            date=datetime.now()
+
+            da=date.day
+            hr=date.hour
+            mn=date.month
+            yr=date.year
+
+            tf=pd.DataFrame({'year':[yr,yr,yr,yr,yr,yr,yr,yr,yr,yr,yr],'month':[mn,mn,mn,mn,mn,mn,mn,mn,mn,mn,mn],'day':[da,da+1,da+2,da+3,da+4,da+5,da+6,da+7,da+8,da+9,da+10]})
+            dat=str(pd.to_datetime(tf)).split()
+            Dat=[]
+            for i in range(1,len(dat)-1,2):
+                Dat.append(dat[i])
+            RD=pd.DataFrame({'year':[yr],'month':[mn],'day':[da]})
+            DAT=str(pd.to_datetime(RD)).split()
+            print(DAT)
+            '''record=[]
+            record.append(DAT[1])
+            record.append(PM)
+            record.append(PM10)
+            record.append(NO2)
+            record.append(CO)
+            record.append(SO2)
+            record.append(O3)
+            record.append(AQI)'''
+            AQIs = list (Prediction["AQI"])
+            Air_quality = (AQIs[0])
+    return render_template("app.html", city=city)
 
 @app.route('/failed', methods=["GET","POST"])
 def failed():
@@ -44,7 +96,13 @@ def failed():
         mysql.connection.commit()
         cur.close()
     return render_template('failed.html')
-
+@app.route('/users')
+def users():
+    cur = mysql.connection.cursor()
+    resultValue = cur.execute("SELECT * FROM aqi")
+    if resultValue > 0:
+        userDetails = cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
 @app.route('/data', methods=["GET","POST"])
 def data():
     if request.method == 'POST':
