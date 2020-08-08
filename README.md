@@ -1,4 +1,5 @@
-# CodeShark
+# Team Name: CodeShark
+## Admin: Fredy Somy
 ## Project Name: C.A.C.H.E - Tagline here
 The name of our project is C.A.C.H.E. It stands for **'Clean Air and Care for Healthy Environment'**
 ### Aim of Project: To mobilise people and aware them about Air Pollution.
@@ -13,3 +14,5 @@ The name of our project is C.A.C.H.E. It stands for **'Clean Air and Care for He
 - **MySQL** was used for the database functionality. For linking user input with web, python program and ML, we needed it.
 - We used the **VAR (Vector-Auto Regression) algorithm** for working on our datasets and prediction. It is a time series based algorithm that can also support multivariable data structure.
 - **Google Cloud** was used to host our project online. After hosting it, it could be deployed.
+## What is happening in the project?
+Detailed description of processes taking place in the project
