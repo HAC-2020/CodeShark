@@ -1,5 +1,4 @@
 # Team Name: CodeShark
-## Admin: Fredy Somy
 ## Project Name: C.A.C.H.E - Tagline here
 The name of our project is C.A.C.H.E. It stands for **'Clean Air and Care for Healthy Environment'**
 ### Aim of Project: To mobilise people and aware them about Air Pollution.
