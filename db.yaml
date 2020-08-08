@@ -1,0 +1,4 @@
+mysql_host: '#Name of your mySQL host server' #remove # when typing
+mysql_user: '#Name of mySQL user' #remove # when typing
+mysql_password: '#your mySQL password here' #remove # when typing
+mysql_db: '#name of database you wish to address from mySQL database' #remove # when typing
