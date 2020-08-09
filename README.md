@@ -26,3 +26,5 @@ Each time a project get created, it involves many hurdles and issues. We also fa
 4. There were difficulties in hosting our flask based app on the web. Since we are juvenile, we could not find hosting services that work without use of a Credit Card.
 5. We have still not been able to completely finalise our idea. It's just a proof of concept. We are still working on sending data from our flask app to the ML algorithm. 
 We hope it works out fine.
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
