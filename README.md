@@ -14,4 +14,15 @@ The name of our project is C.A.C.H.E. It stands for **'Clean Air and Care for He
 - We used the **VAR (Vector-Auto Regression) algorithm** for working on our datasets and prediction. It is a time series based algorithm that can also support multivariable data structure.
 - **Google Cloud** was used to host our project online. After hosting it, it could be deployed.
 ## What is happening in the project?
-Detailed description of processes taking place in the project
+1. The website has 4 tabs: 'Home', 'About Us', 'Contact Us' and 'Give us your data?'. The first page i.e; Home talks about the common information that we wish to provide the
+   people. It hosts of ML algorithm and statistical data. In the second page we explain our campaign S.H.A.N in detail. In the third page we share our contact details while in the
+   last page we ask user to share any AQI data that they wish to provide us with better analytics.
+2. When the user visits the home page, he enters the city of which he wishes the analytics. Our python program takes in the city input, assigns it to the correct 'Machine Learning' (ML) model, and correct analysis dataset. Then, the Vector Auto Regression algorithm
+## Challenges we ran into:
+Each time a project get created, it involves many hurdles and issues. We also faced issues in creating the project:
+1. Difficulty in finding dataset that could give AQI readings from major cities of India.
+2. Since the current ML algorithm used is time-series based, the datasets need to be updated regularly, for which we had to find an API that could give us precise and reliable data.
+3. We faced problems in getting the queried data from our website to our Python program and pass it into our ML algoritm.
+4. There were difficulties in hosting our flask based app on the web. Since we are juvenile, we could not find hosting services that work without use of a Credit Card.
+5. We have still not been able to completely finalise our idea. It's just a proof of concept. We are still working on sending data from our flask app to the ML algorithm. 
+We hope it works out fine.
